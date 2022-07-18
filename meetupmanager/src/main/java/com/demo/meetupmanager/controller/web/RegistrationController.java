@@ -10,13 +10,12 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/registration")
+@RequestMapping("/registration")
 public class RegistrationController {
 
     private RegistrationService registrationService;
 
     private ModelMapper modelMapper;
-
 
     public RegistrationController(RegistrationService registrationService, ModelMapper modelMapper) {
         this.registrationService = registrationService;
@@ -33,4 +32,3 @@ public class RegistrationController {
         return modelMapper.map(entity, RegistrationDTO.class);
     }
 }
-
