@@ -1,21 +1,16 @@
 package com.demo.meetupmanager.repository;
 
-import com.demo.meetupmanager.model.Registration;
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import java.util.Optional;
+import com.demo.meetupmanager.model.Registration;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-
-@ExtendWith(SpringExtension.class)
 @ActiveProfiles("test")
 @DataJpaTest
 public class RegistrationRepositoryTest {
@@ -25,7 +20,6 @@ public class RegistrationRepositoryTest {
 
     @Autowired
     RegistrationRepository repository;
-
 
     @Test
     @DisplayName("Should return true when exists an registration already created.")
@@ -53,8 +47,6 @@ public class RegistrationRepositoryTest {
         assertThat(exists).isFalse();
 
     }
-
-
 
     public static Registration createNewRegistration(String registration) {
         return Registration.builder()
