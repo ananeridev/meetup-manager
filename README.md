@@ -1,1 +1,3 @@
-# rocketseat-live-meetup-manager
+# live-meetup-manager
+
+Projeto ministrado em live!
